@@ -41,3 +41,28 @@
 2.    \FULL_STACK\server> npm run dev
 ```
 运行以上命令启动项目。
+
+##前端文件结构:
+```
+C:.
+client
+└─src
+    ├─css
+    |  | help.css
+    |  | home.css
+    |  | index.css
+    |  | loading.css
+    |  | message.css
+    |  | register.css
+    └─js
+    |  | help.js
+    |  | home.js
+    |  | index.js
+    |  | loading.js
+    |  | message.js
+    |  | register.js
+    | help.html
+    | home.html
+    | index.html
+    | register.html
+```
