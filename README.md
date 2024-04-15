@@ -66,3 +66,12 @@ client
     | index.html
     | register.html
 ```
+### 包含文件
+|   HTML   |   CSS   |Javascript|comment|
+|:--------:|:-------:|:--------:|:------:|
+|index.html|index.css| index.js |登录页|
+|help.html |help.css | help.js  |重置密码页|
+|home.html |home.css | home.js  |主页|
+|register.html |register.css | register.js  |注册页|
+| null|message.css | message.js  |消息模块|
+| null|loading.css | loading.js  |加载动画模块|
