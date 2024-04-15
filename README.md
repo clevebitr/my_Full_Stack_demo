@@ -27,7 +27,7 @@
 ---
 其实Express也是现学现卖，有些东西根本没弄明白，勉强写了一个。不忙的话建议重构一下。这是本人第一次接触后端。
 #### 配置运行：
-1.首先，你需要安装Nodejs，因为后端使用Nodejs写的（废话）  
+1.首先，你需要安装Nodejs，因为后端使用Nodejs写的（废话）    
 2.安装插件，引用了第三方中间件及插件。
 |   插件名   |   版本   |说明|
 |:--------:|:-------:|:--------:|
@@ -41,6 +41,42 @@
 1.    cd /FULL_STACK/server/
 2.    \FULL_STACK\server> npm run dev
 ```
+运行以上命令启动项目。
+
+## 前端文件结构:
+```
+C:.
+client
+└─src
+    ├─css
+    |  | help.css
+    |  | home.css
+    |  | index.css
+    |  | loading.css
+    |  | message.css
+    |  | register.css
+    └─js
+    |  | help.js
+    |  | home.js
+    |  | index.js
+    |  | loading.js
+    |  | message.js
+    |  | register.js
+    | help.html
+    | home.html
+    | index.html
+    | register.html
+```
+### 包含文件
+|   HTML   |   CSS   |Javascript|comment|
+|:--------:|:-------:|:--------:|:------:|
+|index.html|index.css| index.js |登录页|
+|help.html |help.css | help.js  |重置密码页|
+|home.html |home.css | home.js  |主页|
+|register.html |register.css | register.js  |注册页|
+| null|message.css | message.js  |消息模块|
+| null|loading.css | loading.js  |加载动画模块|
+
 运行以上命令启动项目。
 
 ## 前端文件结构:
