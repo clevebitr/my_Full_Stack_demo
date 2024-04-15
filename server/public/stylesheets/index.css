@@ -1,0 +1,19 @@
+/* 2024年3月31日 */
+/* xlbt */
+*{
+    /* 初始化 */
+    margin: 0;
+    padding: 0;
+    /* box-sizing: border-box; */
+}
+.homebox{
+    width: 100%;
+    height: 100vh;
+    background-color: #353540;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: nowrap;
+    justify-content: center;
+}

@@ -1,0 +1,54 @@
+<!-- 2024年4月12日 v0.2 -->
+<!-- xlbt -->
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REGISTER</title>
+    <!-- 页面css -->
+    <link rel="stylesheet" type="text/css" href="css/register.css">
+    <!-- axios -->
+    <!-- cdn -->
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+    <!-- message css 这个css是引用阿里的一些字体图标，请戳： https://www.iconfont.cn/ -->
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_1117508_wxidm5ry7od.css">
+    <link rel="stylesheet" href="./css/message.css">
+    <!-- loading css -->
+    <link rel="stylesheet" href="./css/loading.css">
+    <!-- message js -->
+    <script src="./js/message.js"></script>
+    <!-- loading js -->
+    <script src="./js/loading.js"></script>
+    <!-- register js -->
+    <script src="js/register.js"></script>
+    <!-- 缓存 -->
+    <meta http-equiv="cache-control" content="max-age=3600">
+</head>
+
+<body class="lat">
+    <!-- loding  -->
+    <div class="wrapper"></div>
+    <!-- message -->
+    <div id="message-container"></div>
+
+    <div class="box">
+        <div class="tit">register</div>
+        <input type="text" id="R_name" oninput="R_name()" placeholder="昵称">
+        <span id="R_tips" class="tips"></span>
+        <input type="text" id="R_user" oninput="R_email()" placeholder="邮箱">
+        <span id="E_tips" class="tips"></span>
+        <input type="password" id="R_pasw" oninput="R_pwd()" placeholder="密码">
+        <span id="P_tips1" class="tips"></span>
+        <input type="password" id="R1_pasw" oninput="R1_pwd()" placeholder="确认密码">
+        <span id="P_tips2" class="tips"></span>
+        <button class="btns" id="bth" type=“button” onclick="return register()">注册</button><br>
+        <span>已有账号?<a href="index.html">登录</a></span>
+    </div>
+
+    <script>
+        // message可以定义为全局对象，项目中可以直接调用。
+        const message = new Message();
+    </script>
+</body>
+</html>
