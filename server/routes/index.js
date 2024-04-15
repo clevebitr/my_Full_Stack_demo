@@ -17,6 +17,7 @@ router.post('/login',async(req,res,next)=>{
         return res.json({
           code:1002,
           msg:"登录失败,检查账号或密码",
+          login_state:false
         });
     }
     if (user.dataValues.upwd==upwd){
@@ -29,12 +30,14 @@ router.post('/login',async(req,res,next)=>{
       return res.json({
         code:1001,
         msg:"登录成功",
-        token
+        token,
+        login_state:true
       });
     }else{
       return res.json({
         code:1002,
         msg:"登录失败,检查账号或密码",
+        login_state:true
       });
     }
   }catch(err){

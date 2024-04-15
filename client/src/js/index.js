@@ -1,7 +1,6 @@
 // 2024年4月12日 v0.2
 //xlbt
-var E = false;
-var P = false;
+
 var wrapper = document.getElementsByClassName('wrapper')[0];
 var AUTH_TOKEN = localStorage.getItem("token");
 var info
