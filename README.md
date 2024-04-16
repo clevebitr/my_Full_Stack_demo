@@ -36,7 +36,17 @@
 |jsonwebtoken |9.0.2 | 生成Token  |
 |mysql2 |3.9.3 | mysql数据库  |
 | nodemon|3.1.0 | 项目更改自动重启  |
-| sequelize|6.37.2| 链接数据库  |
+| sequelize|6.37.2| 链接数据库  |  
+
+
+3.安装mysql，配置数据库
+|   数据库名称   |   表   |说明|
+|:--------:|:-------:|:--------:|
+|onlinedb|users| 用户表 |   
+
+![image] (./image.png)
+
+##### 前往/model/dbconfig.js 更改数据库配置
 ``` bash
 1.    cd /FULL_STACK/server/
 2.    \FULL_STACK\server> npm run dev
