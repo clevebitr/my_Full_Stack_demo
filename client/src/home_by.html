@@ -1,0 +1,171 @@
+<!-- 2024年2月11日 v0.1 -->
+<!-- xlbt -->
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOME</title>
+    <link rel="stylesheet" type="text/css" href="css/home_by.css">
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+    <!-- message css 这个css是引用阿里的一些字体图标，请戳： https://www.iconfont.cn/ -->
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_1117508_wxidm5ry7od.css">
+    <link rel="stylesheet" href="./css/message.css">
+    <!-- loading css -->
+    <link rel="stylesheet" href="./css/loading.css">
+    <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- message js -->
+    <script src="./js/message.js"></script>
+    <!-- loading js -->
+    <script src="./js/loading.js"></script>
+    <script src="js/home.js"></script>
+</head>
+
+<body>
+    <nav>
+        <ul class="menus">
+            <li class="li">
+                <i class="fa fa-th-large" aria-hidden="true"></i>
+                主页
+                <ul>
+                    <li>主页</li>
+                    <li>项目</li>
+                </ul>
+            </li>
+            <li class="li">
+                <i class="fa fa-check-square" aria-hidden="true"></i>
+                常规设置
+                <ul>
+                    <li>更改用户名</li>
+                    <li>更改密码</li>
+                    <li>更改邮箱</li>
+                    <li>请求设置</li>
+                    <li>查看Token</li>
+                    <li>测试链接</li>
+                </ul>
+            </li>
+            <li class="li">
+                <i class="fa fa-comment" aria-hidden="true"></i>
+                管理
+                <ul>
+                    <li>申请管理员</li>
+                    <li>用户管理</li>
+                    <li>后台管理</li>
+                    <li>链接管理</li>
+                </ul>
+            </li>
+            <li class="li">
+                <i class="fa fa-tags" aria-hidden="true"></i>
+                个性化
+                <ul>
+                    <li>明/暗色模式</li>
+                    <li>账号</li>
+                </ul>
+            </li>
+            <li class="li">
+                <i class="fa fa-bars" aria-hidden="true"></i>
+                其他
+                <ul>
+                    <li>个人资料</li>
+                    <li>管理个人信息</li>
+                    <li>关于</li>
+                    <li>反馈</li>
+                    <li>参考文件</li>
+                    <li>关于作者</li>
+                    <li>退出登录</li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <div class="info">
+        <h1>关于:</h1><br>
+        <p>FULLSTACK_DEMO</p>
+        <P>v0.2</P>
+        <p>clevebiter</p>
+        <p>GitHub项目地址:https://github.com/clevebitr/my_Full_Stack_demo</p>
+        <p>仅供学习交流使用</p><br>
+        <p> 2024年4月17日</p>
+    </div>
+</body>
+<script>
+    // message可以定义为全局对象，项目中可以直接调用。
+    const message = new Message();
+
+    var itemli = document.getElementsByTagName("li");
+
+    for (var i = 0; i < itemli.length; i++) {
+        itemli[i].onclick = function (n) {
+            return function () {
+                switch (n) {
+                    case 1:
+                        location.href = "http://127.0.0.1:5500/client/src/home.html";
+                    case 2:
+                        location.href = "https://github.com/clevebitr/my_Full_Stack_demo";
+                    case 4:// 更改用户名
+                        console.log("更改用户名");
+                        break;
+                    case 5:// 更改密码
+                        console.log("更改密码");
+                        break;
+                    case 6://更改邮箱
+                        console.log("更改邮箱");
+                        break;
+                    case 7://请求设置
+                        console.log("请求设置");
+                        break;
+                    case 8://查看Token
+                        console.log("查看Token");
+                        break;
+                    case 9://测试链接
+                        console.log("测试链接");
+                        break;
+                    case 11://申请管理员
+                        console.log("申请管理员");
+                        break;
+                    case 12://用户管理
+                        console.log("用户管理");
+                        break;
+                    case 13://后台管理
+                        console.log("后台管理");
+                        break;
+                    case 14://链接管理
+                        console.log("链接管理");
+                        break;
+                    case 16://明/暗模式
+                        console.log("明/暗模式");
+                        break;
+                    case 17://账号
+                        console.log("账号");
+                        break;
+                    case 19://个人资料
+                        console.log("个人资料");
+                        break;
+                    case 20://管理个人信息
+                        console.log("管理个人信息");
+                        break;
+                    case 21://关于
+                        console.log("关于");
+                        break;
+                    case 22://反馈
+                        console.log("反馈");
+                        break;
+                    case 23://参考文件
+                        console.log("参考文件");
+                        break;
+                    case 24://关于作者
+                        console.log("关于作者");
+                        break;
+                    case 25://退出登录
+                        console.log("退出登录");
+                        break;
+                }
+            }
+        }(i)
+    }
+
+</script>
+
+</html>
