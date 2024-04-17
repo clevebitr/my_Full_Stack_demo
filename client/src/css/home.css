@@ -13,6 +13,7 @@ body{
     background-color: #E2C8DB;
     justify-content: flex-start
 }
+
 ul{
     list-style: none;
 }
@@ -23,10 +24,12 @@ nav{
     height: 100vh;
     /* background-color: #8a98c9; */
     background-color: #C584B3;
-    transition: 0.2s;
+    transition: 0.6s;
+    white-space: nowrap
 }
 nav:hover{
     width: 300px;
+    animation-fill-mode: forwards;
 }
 
 .menus{
@@ -36,15 +39,16 @@ nav:hover{
 
 .li{
     letter-spacing: 2px;
-    font-size: 0px;
+    font-size: 17px;
     font-weight: 600;
     padding: 16px 0;
     /* 动画过渡 */
-    transition: 0s;
+    transition: 0.6s;
+    white-space: nowrap;
+    overflow:hidden;
 }
 nav:hover .li{
-    transition: 0.3s;
-    font-size: 17px;
+    transition: 0.6s;
 }
 /* .li::after{
     content: "";
@@ -78,16 +82,18 @@ nav:hover .li{
     overflow: hidden;
     /* background-color: #59699b; */
     background-color: #a06993;
-    transition: 0.4s;
+    transition: 0.6s;
 }
 .li ul li{
     padding: 16px 24px;
     /* 文字禁止换行 */
     white-space: nowrap;
-    transition: 0.4s;
+    transition: 0.6s;
 }
 .li:hover ul{
-    width: 245px;
+    width: 240px;
+    white-space: nowrap;
+    overflow:hidden;
 }
 .li ul li:hover{
     /* background-color: #828eb9; */
