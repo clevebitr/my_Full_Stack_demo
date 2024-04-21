@@ -12,7 +12,7 @@ var bol = false;
 window.addEventListener("load", (event) => {
     //控制台显示页面加载完成
     console.log("page is fully loaded");
-
+    checkNightMode()
     //get admin确定登录状态
     axios.get("http://localhost:3000/admin", {
         headers: {
@@ -157,10 +157,41 @@ function liclick() {
                         break;
                     case 16://明/暗模式
                         console.log("明/暗模式");
-                        switchNightMode();
+                        var info = getCookie("prefers")
+                        if (info == null) {
+                            message.show({
+                                type: 'info',
+                                text: "当前正在跟随系统设置,无法手动修改",
+                            });
+                        }else if(info == "true"){
+                            switchNightMode()
+                        }else if (info == "false"){
+                            message.show({
+                                type: 'info',
+                                text: "当前正在跟随系统设置,无法手动修改",
+                            });
+                        }
                         break;
-                    case 17://账号
-                        console.log("账号");
+                    case 17://根据系统颜色切换明/暗模式
+                        console.log("根据系统颜色切换明/暗模式");
+                        prefers_mode();
+                        var info = getCookie("prefers")
+                        if (info == null) {
+                            message.show({
+                                type: 'info',
+                                text: "当前正在跟随系统设置",
+                            });
+                        }else if(info == "true"){
+                            message.show({
+                                type: 'info',
+                                text: "不再跟随系统设置",
+                            });
+                        }else if (info == "false"){
+                            message.show({
+                                type: 'info',
+                                text: "当前正在跟随系统设置",
+                            });
+                        }
                         break;
                     case 19://个人资料
                         console.log("个人资料");

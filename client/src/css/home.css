@@ -1,15 +1,10 @@
-*{
+* {
     /* 初始化 */
     margin: 0;
     padding: 0;
 }
-@media (prefers-color-scheme: dark) {
-    body {
-      background: #222;
-      color: #eee;
-    }
-}
-body{
+
+body {
     /* 100%窗口高度 */
     height: 100vh;
     /* 弹性布局 居中 */
@@ -20,10 +15,11 @@ body{
     justify-content: flex-start
 }
 
-ul{
+ul {
     list-style: none;
 }
-nav{
+
+nav {
     /* 固定定位 */
     position: fixed;
     width: 60px;
@@ -33,17 +29,18 @@ nav{
     transition: 0.6s;
     white-space: nowrap
 }
-nav:hover{
+
+nav:hover {
     width: 300px;
     animation-fill-mode: forwards;
 }
 
-.menus{
+.menus {
     margin: 50px 0;
     color: #fff;
 }
 
-.li{
+.li {
     letter-spacing: 2px;
     font-size: 17px;
     font-weight: 600;
@@ -51,11 +48,13 @@ nav:hover{
     /* 动画过渡 */
     transition: 0.6s;
     white-space: nowrap;
-    overflow:hidden;
+    overflow: hidden;
 }
-nav:hover .li{
+
+nav:hover .li {
     transition: 0.6s;
 }
+
 /* .li::after{
     content: "";
     position: absolute;
@@ -67,17 +66,19 @@ nav:hover .li{
     background-color: #fff;
     border-radius: 50%;
 } */
-.menus li:hover{
+.menus li:hover {
     background-color: #D2A6C6;
 }
-.li .fa{
+
+.li .fa {
     font-size: 20px;
     width: 50px;
     height: 20px;
     text-align: center;
     margin-left: 5px;
 }
-.li ul{
+
+.li ul {
     width: 0;
     height: 100vh;
     padding: 50px 0;
@@ -90,18 +91,21 @@ nav:hover .li{
     background-color: #a06993;
     transition: 0.6s;
 }
-.li ul li{
+
+.li ul li {
     padding: 16px 24px;
     /* 文字禁止换行 */
     white-space: nowrap;
     transition: 0.6s;
 }
-.li:hover ul{
+
+.li:hover ul {
     width: 240px;
     white-space: nowrap;
-    overflow:hidden;
+    overflow: hidden;
 }
-.li ul li:hover{
+
+.li ul li:hover {
     /* background-color: #828eb9; */
     background-color: #c28fb4;
 }

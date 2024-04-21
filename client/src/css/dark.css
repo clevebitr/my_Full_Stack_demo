@@ -1,0 +1,49 @@
+.night {
+
+    color: #E0E0E0;
+
+    background-color: #424242;
+
+}
+
+/* 暗色模式span标签 */
+
+.night span {
+
+    color: #E0E0E0;
+
+}
+
+.night nav{
+    background-color: #8a98c9;
+}
+
+.night li ul{
+    background-color: #7b8cc6;
+}
+
+.night li ul li:hover {
+    background-color: #8a98c9;
+}
+
+.night .menus li:hover {
+    background-color: #7b8cc6;
+}
+
+/* 暗色模式警告按钮样式*/
+
+.night .btn-danger {
+
+    color: #fff;
+
+    background-color: #e45353a1;
+
+    border-color: #e45353a1;
+
+}
+
+.night img {
+
+    filter: brightness(0.9);
+
+}
