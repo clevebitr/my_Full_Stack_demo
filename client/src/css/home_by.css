@@ -4,6 +4,9 @@
     padding: 0;
 }
 body{
+    height: 100vh;
+}
+.menus_div{
     /* 100%窗口高度 */
     height: 100vh;
     /* 弹性布局 居中 */

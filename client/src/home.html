@@ -2,26 +2,33 @@
 <!-- xlbt -->
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HOME</title>
-    <link rel="stylesheet" type="text/css" href="css/home.css">
-
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
     <!-- message css 这个css是引用阿里的一些字体图标，请戳： https://www.iconfont.cn/ -->
     <link rel="stylesheet" href="http://at.alicdn.com/t/font_1117508_wxidm5ry7od.css">
     <link rel="stylesheet" href="./css/message.css">
     <!-- loading css -->
     <link rel="stylesheet" href="./css/loading.css">
     <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- home css -->
+    <link rel="stylesheet" type="text/css" href="css/home.css">
+    <!-- radio css -->
+    <link rel="stylesheet" href="./css/radio.css">
     <!-- message js -->
     <script src="./js/message.js"></script>
     <!-- loading js -->
     <script src="./js/loading.js"></script>
+    <!-- radio js -->
+    <script src="./js/radio.js"></script>
+    <!-- home js -->
     <script src="js/home.js"></script>
+    <!-- axios cdn -->
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
 </head>
+
 <body>
     <nav>
         <ul class="menus">
@@ -59,7 +66,7 @@
                 <i class="fa fa-tags" aria-hidden="true"></i>
                 个性化
                 <ul>
-                    <li>明/暗色模式</li>
+                    <li class="darkmode">明/暗色模式</li>
                     <li>账号</li>
                 </ul>
             </li>
@@ -80,8 +87,9 @@
     </nav>
 </body>
 <script>
-        // message可以定义为全局对象，项目中可以直接调用。
-        const message = new Message();
+    // message可以定义为全局对象，项目中可以直接调用。
+    const message = new Message();
+    //li单击事件
+    liclick();
 </script>
-
 </html>

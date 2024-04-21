@@ -115,11 +115,11 @@ function register(){
             wrap: wrapper
         });
         load.init();
-
+        // localhost:3000
         //axios
         axios({
             method: 'post',
-            url: 'http://localhost:3000/user/add',
+            url: 'http://39.101.78.130/user/add',
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded'
             },
