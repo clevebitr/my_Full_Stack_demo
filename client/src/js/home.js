@@ -1,19 +1,21 @@
 // 2024年2月11日 v0.1
 // xlbt
+//深度绑定message模块,dark模块(cookie查询)
 
-//-----------------------------------------定义公用变量------------------------------------------
+var wrapper = document.getElementsByClassName('wrapper')[0];//设置弹窗背景
+var AUTH_TOKEN = localStorage.getItem("token");//获取缓存中的token
 
-var wrapper = document.getElementsByClassName('wrapper')[0];
-var AUTH_TOKEN = localStorage.getItem("token");
-var bol = false;
-// 封装添加点击事件监听器的函数  
-//----------------------------------------------------------------------------------------------
 //当页面加载完成后执行以下函数
 window.addEventListener("load", (event) => {
     //控制台显示页面加载完成
     console.log("page is fully loaded");
     checkNightMode()
-    //get admin确定登录状态
+    //link test 测试与服务器链接
+    linktest(AUTH_TOKEN);
+});
+
+//链接测试函数
+function linktest(AUTH_TOKEN){
     axios.get("http://localhost:3000/admin", {
         headers: {
             'Authorization': 'Bearer ' + AUTH_TOKEN
@@ -31,6 +33,7 @@ window.addEventListener("load", (event) => {
             });
             return false;
         }
+        return data;
     }).catch(error => {
         errorobj = error.data
         //请求失败
@@ -68,7 +71,7 @@ window.addEventListener("load", (event) => {
         }
         console.log("请求失败")
     })
-});
+}
 
 
 //邮箱格式检查函数
@@ -97,6 +100,7 @@ function H_pwd(password) {
 }
 
 function liclick() {
+    //侧边栏点击
     var itemli = document.getElementsByTagName("li");
 
     for (var i = 0; i < itemli.length; i++) {
@@ -139,9 +143,29 @@ function liclick() {
                         break;
                     case 8://查看Token
                         console.log("查看Token");
+                        if(AUTH_TOKEN){
+                            message.show({
+                                type: 'info',
+                                text: AUTH_TOKEN,
+                            });
+                        }else{
+                            message.show({
+                                type: 'info',
+                                text: "本地不存在缓存的token",
+                            });
+                        }
                         break;
                     case 9://测试链接
                         console.log("测试链接");
+                        var data = linktest(AUTH_TOKEN);
+                        if (data){
+                            if (data.status == 200) {
+                                message.show({
+                                    type: 'success',
+                                    text: '成功与服务器链接',
+                                });
+                            }
+                        }
                         break;
                     case 11://申请管理员
                         console.log("申请管理员");
@@ -239,6 +263,9 @@ function liclick() {
         }(i)
     }
 }
+
+//弹窗
+
 // 定义处理“否”按钮点击的回调函数  
 function handleNoClick() {
     setTimeout(() => {

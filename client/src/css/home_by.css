@@ -5,6 +5,7 @@
 }
 body{
     height: 100vh;
+     background-color: #E2C8DB;
 }
 .menus_div{
     /* 100%窗口高度 */
@@ -13,7 +14,6 @@ body{
     display: flex;
     align-items: center;
     /* background-color: #d3dafa; */
-    background-color: #E2C8DB;
     justify-content: flex-start
 }
 .info{

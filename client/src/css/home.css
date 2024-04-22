@@ -27,7 +27,8 @@ nav {
     /* background-color: #8a98c9; */
     background-color: #C584B3;
     transition: 0.6s;
-    white-space: nowrap
+    white-space: nowrap;
+    user-select:none;
 }
 
 nav:hover {
