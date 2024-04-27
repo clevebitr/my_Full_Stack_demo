@@ -73,7 +73,14 @@ var Xios = {
                 });  
             } else if (error.request) {  
                 // 请求已发出，但是没有收到任何响应  
-                console.log(error.request);  
+                console.log(error.request);
+                message.show({
+                    type: 'error',
+                    text: "请求服务器失败",
+                    duration: 0,
+                    closeable: true
+                });
+                load.hide();  
             } else {  
                 // 在设置请求时触发了一个错误  
                 console.log('Error', error.message);  
@@ -127,7 +134,14 @@ var Xios = {
                 }  
             } else if (error.request) {  
                 // 请求已发出，但是没有收到任何响应  
-                console.log(error.request);  
+                message.show({
+                    type: 'error',
+                    text: "请求服务器失败",
+                    duration: 0,
+                    closeable: true
+                });
+                load.hide();
+                return false;
             } else {  
                 // 在设置请求时触发了一个错误  
                 console.log('Error', error.message);

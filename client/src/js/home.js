@@ -11,7 +11,7 @@ window.addEventListener("load", (event) => {
     console.log("page is fully loaded");
     checkNightMode()
     //link test 测试与服务器链接
-    linktest(AUTH_TOKEN);
+    // linktest(AUTH_TOKEN);
 });
 
 //链接测试函数
