@@ -15,7 +15,14 @@ window.addEventListener("load", (event) => {
 });
 
 //链接测试函数
-function linktest(AUTH_TOKEN){
+function linktest(AUTH_TOKEN) {
+    //loading动画
+    load = new Loading({
+        type: 2,
+        tipLabel: "",
+        wrap: wrapper
+    });
+    load.init();
     axios.get("http://localhost:3000/admin", {
         headers: {
             'Authorization': 'Bearer ' + AUTH_TOKEN
@@ -31,6 +38,7 @@ function linktest(AUTH_TOKEN){
                 duration: 0,
                 closeable: true
             });
+            load.hide();
             return false;
         }
         return data;
@@ -44,6 +52,7 @@ function linktest(AUTH_TOKEN){
                     type: 'error',
                     text: errorobj.msg
                 });
+                load.hide();
             } else {
                 // 其他状态码的处理逻辑  
                 console.log(error.response.data);
@@ -51,6 +60,7 @@ function linktest(AUTH_TOKEN){
                     type: 'error',
                     text: errorobj.msg + "Code:" + errorobj.status
                 });
+                load.hide();
             }
         } else if (error.request) {
             // 请求已发出，但是没有收到任何响应  
@@ -61,6 +71,8 @@ function linktest(AUTH_TOKEN){
                 duration: 0,
                 closeable: true
             });
+            load.hide();
+            return false;
         } else {
             // 在设置请求时触发了一个错误  
             console.log('Error', error.message);
@@ -68,6 +80,7 @@ function linktest(AUTH_TOKEN){
                 type: 'error',
                 text: errorobj.msg
             });
+            load.hide();
         }
         console.log("请求失败")
     })
@@ -143,12 +156,12 @@ function liclick() {
                         break;
                     case 8://查看Token
                         console.log("查看Token");
-                        if(AUTH_TOKEN){
+                        if (AUTH_TOKEN) {
                             message.show({
                                 type: 'info',
                                 text: AUTH_TOKEN,
                             });
-                        }else{
+                        } else {
                             message.show({
                                 type: 'info',
                                 text: "本地不存在缓存的token",
@@ -158,7 +171,7 @@ function liclick() {
                     case 9://测试链接
                         console.log("测试链接");
                         var data = linktest(AUTH_TOKEN);
-                        if (data){
+                        if (data) {
                             if (data.status == 200) {
                                 message.show({
                                     type: 'success',
@@ -187,9 +200,9 @@ function liclick() {
                                 type: 'info',
                                 text: "当前正在跟随系统设置,无法手动修改",
                             });
-                        }else if(info == "true"){
+                        } else if (info == "true") {
                             switchNightMode()
-                        }else if (info == "false"){
+                        } else if (info == "false") {
                             message.show({
                                 type: 'info',
                                 text: "当前正在跟随系统设置,无法手动修改",
@@ -205,12 +218,12 @@ function liclick() {
                                 type: 'info',
                                 text: "当前正在跟随系统设置",
                             });
-                        }else if(info == "true"){
+                        } else if (info == "true") {
                             message.show({
                                 type: 'info',
                                 text: "不再跟随系统设置",
                             });
-                        }else if (info == "false"){
+                        } else if (info == "false") {
                             message.show({
                                 type: 'info',
                                 text: "当前正在跟随系统设置",
@@ -229,12 +242,46 @@ function liclick() {
                         break;
                     case 22://反馈
                         console.log("反馈");
+                        radio = new radiomsg({
+                            title: "确定跳转到GitHub?",
+                            tipLabel_yes: "是",
+                            tipLabel_no: "否",
+                            wrap: wrapper
+                        });
+                        radio.init();
+                        // 定义处理“是”按钮点击的回调函数  
+                        function github_issues() {
+                            radio.result = true;
+                            console.log('用户点击了“是”');
+                            setTimeout(() => {
+                                location.href = "https://github.com/clevebitr/my_Full_Stack_demo/issues";
+                            }, 500);
+                        }
+                        addClickListenersByClassName("yes", github_issues)
+                        addClickListenersByClassName("no", handleNoClick)
                         break;
                     case 23://参考文件
                         console.log("参考文件");
                         break;
                     case 24://关于作者
                         console.log("关于作者");
+                        radio = new radiomsg({
+                            title: "确定跳转到GitHub?",
+                            tipLabel_yes: "是",
+                            tipLabel_no: "否",
+                            wrap: wrapper
+                        });
+                        radio.init();
+                        // 定义处理“是”按钮点击的回调函数  
+                        function github_author() {
+                            radio.result = true;
+                            console.log('用户点击了“是”');
+                            setTimeout(() => {
+                                location.href = "https://github.com/clevebitr/";
+                            }, 500);
+                        }
+                        addClickListenersByClassName("yes", github_author)
+                        addClickListenersByClassName("no", handleNoClick)
                         break;
                     case 25://退出登录
                         console.log("退出登录");
@@ -250,7 +297,7 @@ function liclick() {
                             radio.result = true;
                             console.log('用户点击了“是”');
                             localStorage.removeItem("token");
-                            AUTH_TOKEN = ''; 
+                            AUTH_TOKEN = '';
                             setTimeout(() => {
                                 location.href = "http://127.0.0.1:5500/client/src/index.html";
                             }, 500);

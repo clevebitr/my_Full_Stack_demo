@@ -23,10 +23,12 @@ Loading.prototype.createDom = function () {
     // loading type对应的不同的动画
     var loadingView = document.createElement('div');
     loadingView.className = 'loading-view';
+    var overWrapper = document.createElement('div');
+    overWrapper.className = "overlay";
     // loading 内的文本标签
-    var tipView = document.createElement('div');
-    tipView.className = 'tip-view';
-    tipView.innerText = this.tipLabel;
+    // var tipView = document.createElement('div');
+    // tipView.className = 'tip-view';
+    // tipView.innerText = this.tipLabel;
     // 对 loading type的三种情形进行判断
     switch (this.type) {
         case 1:
@@ -53,6 +55,9 @@ Loading.prototype.createDom = function () {
                     <div class="bounce bounce2"></div>
                     <div class="bounce bounce3"></div>
                 </div>
+                <div class="tip-view">
+                ${this.tipLabel}
+                </div>
            `;
             loadingView.innerHTML = html;
             break;
@@ -73,7 +78,8 @@ Loading.prototype.createDom = function () {
     }
 
     loadingWrapper.appendChild(loadingView);
-    loadingWrapper.appendChild(tipView);
+    // loadingWrapper.appendChild(tipView);
+    loadingWrapper.appendChild(overWrapper)
     this.wrap.appendChild(loadingWrapper);
     this.loadingWrapper = loadingWrapper;
 }

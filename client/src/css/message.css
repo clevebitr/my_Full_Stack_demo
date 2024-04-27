@@ -5,7 +5,7 @@
     left: 0;
     top: 0;
     right: 0;
-
+    z-index: 0;
     /* 采用flex弹性布局，让容器内部的所有消息可以水平居中，还能任意的调整宽度 */
     display: flex;
     flex-direction: column;
@@ -20,7 +20,7 @@
     /* box-shadow: 0 0 10px 0 #eee; */
     font-size: 14px;
     border-radius: 3px;
-
+    
     /* 让消息内部的三个元素（图标、文本、关闭按钮）可以垂直水平居中 */
     display: flex;
     align-items: center;

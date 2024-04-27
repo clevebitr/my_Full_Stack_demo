@@ -18,6 +18,12 @@
 
 }
 
+/* message */
+#message-container .message .close {
+    cursor: pointer;
+    color: #000000;
+}
+
 .night nav{
     transition: 0.6s;
     background-color: #8a98c9;

@@ -1,7 +1,7 @@
 /**
- * type: loading 的类型，默认1
- * tipLabel: loading 内的文本，默认 loading...
- * wrap: loading 的父级
+ * type: radio 的类型，默认1
+ * tipLabel: radio 内的文本，默认 radio...
+ * wrap: radio 的父级
  * 
  * @param {*} config 传入对象（含type/tipLabel/wrap）
  */
@@ -12,26 +12,26 @@ function radiomsg(config) {
     this.wrap = config.wrap || document.body;
     this.radioWrapper = null;
 }
-/* 初始化 loading 效果，在原型链上添加 init 方法 */
+/* 初始化 radio 效果，在原型链上添加 init 方法 */
 radiomsg.prototype.init = function () {
     this.createDom();
 }
-/* 创建 loading 结构 */
+/* 创建 radio 结构 */
 radiomsg.prototype.createDom = function () {
-    // loading wrap的子盒子，即整个loading的内容盒子
+    // radio wrap的子盒子，即整个radio的内容盒子
     var radioWrapper = document.createElement('div');
     radioWrapper.className = 'container';
     var overWrapper = document.createElement('div');
     overWrapper.className = "overlay";
-    // loading type对应的不同的动画
+    // radio type对应的不同的动画
     var radioView = document.createElement('div');
-    radioView.className = 'loading-view';
-    // loading 内的文本标签
+    radioView.className = 'radio-view';
+    // radio 内的文本标签
     var tipView = document.createElement('div');
     tipView.className = 'tip-view';
     var html = `
             <div class="view">
-            <p>${this.title}</p>
+            <div class = "tip-box"><p>${this.title}</p></div>
             <div class="input-box">
                 <label>
                     <input type="radio" name="yes_no">
@@ -55,7 +55,7 @@ radiomsg.prototype.createDom = function () {
     this.radioWrapper = radioWrapper;
 }
 
-// 对loading隐藏
+// 对radio隐藏
 radiomsg.prototype.hide = function () {
     this.wrap.removeChild(this.radioWrapper);
 }

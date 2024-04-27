@@ -1,13 +1,28 @@
 /* 对 loading  整体布局*/
 .loading-wrapper {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* 弹性布局 垂直排列 居中 */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: height 0.2s ease-in-out, margin 0.2s ease-in-out;
+}
+
+
+/* loading 动画图像父级的布局 */
+.loading-view {
     width: 110px;
     height: 100px;
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(40px);
+    background: rgba(255, 255, 255, 0.3);
     border-radius: 10px;
-    color: #fff;
-    font-size: 15px;
-    text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -15,17 +30,16 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    z-index: 10;
+    z-index: 10000;
     transition: height 0.2s ease-in-out, margin 0.2s ease-in-out;
 }
-
-
-/* loading 动画图像父级的布局 */
-.loading-view {
-    height: 40px;
-    position: relative;
+.tip-view{
+    color: #fff;
+    font-size: 15px;
+    text-align: center;
+    z-index: 10000;
+    margin-top: 45px;
 }
-
 .container1,
 .container2 {
     width: 40px;
@@ -234,7 +248,7 @@
 .bounce-view {
     position: absolute;
     left: 50%;
-    top: 50%;
+    top: 40%;
     transform: translate(-50%, -50%);
 }
 
