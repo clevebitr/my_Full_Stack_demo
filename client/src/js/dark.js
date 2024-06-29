@@ -3,12 +3,17 @@ function checkNightMode() {
     var Mode = getCookie('DarkMode')
     var prefers = getCookie('prefers')
 
-    // 存在暗色模式标识符，且Cookies中DarkMode值为1  
+    //判断是否存在暗色模式标识符，如果不存在就创建
+    if(Mode == null || Mode == '' || Mode == undefined || prefers == null || prefers == '' || prefers == undefined){
+        setCookie("prefers", "false", 30);
+        setCookie("DarkMode", "1", 30);
+    }
+    // Cookies中DarkMode值为1  
     if (Mode == 1 && prefers == "true") {
         document.body.classList.remove("night");
         console.log("mode为亮色模式,不跟据系统设置")
     }
-    // 不存在暗色模式标识符或者DarkMode值不是1  
+    // DarkMode值不是1  
     else {//prefers为真时，不跟随系统颜色设置
         if (Mode == 0 && prefers == "true") {
 
@@ -89,7 +94,6 @@ function switchNightMode() {
             console.log("mode设置为亮色模式:1")
             document.body.classList.remove("night");
             setCookie("DarkMode", "1", 30); // 假设cookie过期时间为30天  
-            console.log(getCookie('DarkMode'))
         } else if (Mode == 1) {
             console.log("mode设置为暗色模式:0")
             document.body.classList.add("night");
@@ -108,6 +112,7 @@ function prefers_mode() {
     if (prefers_data == null) {//当prefers_data为空时
         //默认根据系统切换
         setCookie("prefers", "false", 30);
+        console("根据系统切换");
     } else if (prefers_data == "true") {//如果不跟据系统设置切换，就设置为true，跟随系统
         setCookie("prefers", "false", 30);
         // console.log(getCookie("prefers"))

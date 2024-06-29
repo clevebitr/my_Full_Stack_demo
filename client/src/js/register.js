@@ -119,7 +119,7 @@ function register(){
         //axios
         axios({
             method: 'post',
-            url: 'http://39.101.78.130/user/add',
+            url: 'http://localhost:5500/user/add',
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded'
             },

@@ -9,7 +9,8 @@ var AUTH_TOKEN = localStorage.getItem("token");//获取缓存中的token
 window.addEventListener("load", (event) => {
     //控制台显示页面加载完成
     console.log("page is fully loaded");
-    checkNightMode()
+    checkNightMode();
+    console.log("test");
     //link test 测试与服务器链接
     // linktest(AUTH_TOKEN);
 });
@@ -111,9 +112,8 @@ function H_pwd(password) {
         H_pwd_bool = true;
     }
 }
-
-function liclick() {
-    //侧边栏点击
+//侧边栏点击
+function liclick() {  
     var itemli = document.getElementsByTagName("li");
 
     for (var i = 0; i < itemli.length; i++) {
@@ -232,6 +232,7 @@ function liclick() {
                         break;
                     case 19://个人资料
                         console.log("个人资料");
+                        location.href = "http://127.0.0.1:5500/client/src/byme.html";
                         break;
                     case 20://管理个人信息
                         console.log("管理个人信息");

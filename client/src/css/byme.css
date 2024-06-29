@@ -1,0 +1,132 @@
+* {
+    /* 初始化 */
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    /* 100%窗口高度 */
+    height: 100vh;
+    /* 弹性布局 居中 */
+    display: flex;
+    align-items: center;
+    /* background-color: #d3dafa; */
+    background-color: #E2C8DB;
+    justify-content: flex-start
+}
+
+ul {
+    list-style: none;
+}
+
+nav {
+    /* 固定定位 */
+    position: fixed;
+    width: 60px;
+    height: 100vh;
+    /* background-color: #8a98c9; */
+    background-color: #C584B3;
+    transition: 0.6s;
+    white-space: nowrap;
+    user-select:none;
+    z-index: 2;
+}
+
+nav:hover {
+    width: 300px;
+    animation-fill-mode: forwards;
+}
+
+.menus {
+    margin: 50px 0;
+    color: #fff;
+}
+
+.li {
+    letter-spacing: 2px;
+    font-size: 17px;
+    font-weight: 600;
+    padding: 16px 0;
+    /* 动画过渡 */
+    transition: 0.6s;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+nav:hover .li {
+    transition: 0.6s;
+}
+
+.top_menus{
+    z-index: 5;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row-reverse;
+    color: #fff;
+    background-color: #C584B3;
+    position: fixed;
+    top:0px;
+    left: 0px;
+}
+
+.top_menus button {
+    margin-left: 10px;
+    margin-right: 5px;
+    width: 45px;
+    height: 45px;
+    border: none;
+    background-color:rgb(168, 100, 135);
+    border-radius: 5px;
+}
+
+.top_menus p {
+    font-size: 15px;
+    font-weight:bold ;
+}
+
+.menus li:hover {
+    background-color: #D2A6C6;
+}
+
+.li .fa {
+    font-size: 20px;
+    width: 50px;
+    height: 20px;
+    text-align: center;
+    margin-left: 5px;
+}
+
+.li ul {
+    width: 0;
+    height: 100vh;
+    padding: 50px 0;
+    /* 绝对定位 */
+    position: absolute;
+    top: 0;
+    right: 0;
+    overflow: hidden;
+    /* background-color: #59699b; */
+    background-color: #a06993;
+    transition: 0.6s;
+}
+
+.li ul li {
+    padding: 16px 24px;
+    /* 文字禁止换行 */
+    white-space: nowrap;
+    transition: 0.6s;
+}
+
+.li:hover ul {
+    width: 240px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.li ul li:hover {
+    /* background-color: #828eb9; */
+    background-color: #c28fb4;
+}

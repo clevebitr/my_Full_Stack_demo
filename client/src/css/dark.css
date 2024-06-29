@@ -64,3 +64,7 @@
     filter: brightness(0.9);
 
 }
+
+.night .top_menus{
+    background-color: #8a98c9;
+}
